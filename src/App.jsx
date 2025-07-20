@@ -2,7 +2,8 @@ import { useEffect, useState, useRef } from "react";
 import { io } from "socket.io-client";
 import "./App.css";
 
-const SOCKET_SERVER_URL = "http://localhost:5500";
+const SOCKET_SERVER_URL =
+  "http://chat-server-demo-production-95bf.up.railway.app:5500";
 
 function getInitial(name) {
   return name && name.length > 0 ? name[0].toUpperCase() : "?";
