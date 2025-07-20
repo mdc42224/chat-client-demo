@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     // התחברות ל־Socket.io
-    socketRef.current = io(SOCKET_SERVER_URL, { transports: ["websocket"] });
+    socketRef.current = io(SOCKET_SERVER_URL);
 
     console.log(SOCKET_SERVER_URL);
 
