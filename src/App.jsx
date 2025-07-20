@@ -3,7 +3,7 @@ import { io } from "socket.io-client";
 import "./App.css";
 
 const SOCKET_SERVER_URL =
-  "http://chat-server-demo-production-95bf.up.railway.app:5500";
+  "http://chat-server-demo-production-95bf.up.railway.app:5500".trim();
 
 function getInitial(name) {
   return name && name.length > 0 ? name[0].toUpperCase() : "?";
@@ -18,6 +18,8 @@ function App() {
   useEffect(() => {
     // התחברות ל־Socket.io
     socketRef.current = io(SOCKET_SERVER_URL);
+
+    console.log(SOCKET_SERVER_URL);
 
     socketRef.current.on("connect", () => {
       console.log("🟢 Connected to socket server");
