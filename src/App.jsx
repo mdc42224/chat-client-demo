@@ -2,8 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { io } from "socket.io-client";
 import "./App.css";
 
-const SOCKET_SERVER_URL =
-  "https://chat-server-demo-production-95bf.up.railway.app".trim();
+const SOCKET_SERVER_URL = import.meta.env.VITE_SOCKET_SERVER_URL;
 
 function getInitial(name) {
   return name && name.length > 0 ? name[0].toUpperCase() : "?";
